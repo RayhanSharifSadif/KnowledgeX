@@ -635,7 +635,11 @@ app.post("/submit_answer", upload.single("answer_file"), function(req, res) {
     }
 
     // Redirect to sub_ans page after successful upload
+<<<<<<< HEAD
     res.send("Answer successfully uploaded!");
+=======
+    res.send("Question successfully uploaded!");
+>>>>>>> 7ff763f58de684c2f1f62747134a05d92ee3ba89
   });
 });
 
@@ -694,6 +698,7 @@ app.get("/student_view", function(req, res) {
   });
 });
 
+<<<<<<< HEAD
 app.get("/viewmyquestion", function(req, res) {
   const query = "SELECT * FROM questions"; // Fetch all questions without filtering by course code
   
@@ -725,6 +730,8 @@ app.get("/sub_question", function(req, res) {
 });
 
 
+=======
+>>>>>>> 7ff763f58de684c2f1f62747134a05d92ee3ba89
 app.get("/view_questions", function(req, res) {
   const query = "SELECT * FROM questions"; // Fetch all questions without filtering by course code
   

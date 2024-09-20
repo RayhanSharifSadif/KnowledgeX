@@ -7,6 +7,7 @@
     <a href="/logout">Logout</a>
   </div>
 </nav>
+<<<<<<< HEAD
 
 <div class="launch-button" style="text-align: center; margin: 20px 0;">
   <button onclick="window.location.href='/add-course'" style="padding: 10px 20px; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
@@ -44,6 +45,28 @@
     Courses Launched by You
   </div>
   
+=======
+<div class="launch-button">
+    <button onclick="window.location.href='/add-course'">Launch a new course</button>
+</div>
+
+  <div class="launch-button">
+    <form action="/announcement" method="POST">
+      <div>
+        <label for="announcement_text">Announcement:</label>
+        <textarea id="announcement_text" name="announcement_text" required rows="3" placeholder="Enter your announcement here"></textarea>
+      </div>
+      <button type="submit">Submit Announcement</button>
+    </form>
+
+    <form action="/to_announcement" method="POST">
+      <button type="submit">View Announcement</button>
+    </form>
+</div>
+
+  <!-- Heading for the user's courses -->
+  <div class="heading">Courses Launched by You</div>
+>>>>>>> 7ff763f58de684c2f1f62747134a05d92ee3ba89
 
   <!-- Grid to display the courses -->
   <div class="course-grid-container">
@@ -58,6 +81,7 @@
       </div>
     <% }) %>
   </div>
+<<<<<<< HEAD
   
 
     <div style="display: flex; justify-content: center; gap: 20px;">
@@ -72,4 +96,13 @@
     
     
 
+=======
+  <div class="course-grid-container">
+  <form action="/submitted_answer" method="POST">
+    <button type="submit">Submissions</button>
+  </form>
+</div>
+  
+
+>>>>>>> 7ff763f58de684c2f1f62747134a05d92ee3ba89
 <%- include("footer") %>
