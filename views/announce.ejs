@@ -1,0 +1,23 @@
+<%- include("header") %>
+
+<div class="container">
+  <hr>
+  <h2>Latest Announcements</h2>
+
+  <!-- Section to display announcements -->
+  <div>
+    <% if (announcements && announcements.length > 0) { %>
+      <% announcements.forEach(function(announcement) { %>
+        <div>
+          <p><strong><%= announcement.announcement_text %></strong></p>
+          <p><small>Posted on <%= announcement.formatted_date %></small></p>
+        </div>
+        <hr>
+      <% }); %>
+    <% } else { %>
+      <p>No announcements yet. Be the first to post!</p>
+    <% } %>
+  </div>
+</div>
+
+<%- include("footer") %>

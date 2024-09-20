@@ -1,0 +1,51 @@
+<%- include("header") %>
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/first_page">Home</a>
+  </div>
+  <div class="nav-right">
+    <a href="/logout">Logout</a>
+  </div>
+</nav>
+<div class="launch-button">
+    <button onclick="window.location.href='/add-course'">Launch a new course</button>
+</div>
+
+  <div class="launch-button">
+    <form action="/announcement" method="POST">
+      <div>
+        <label for="announcement_text">Announcement:</label>
+        <textarea id="announcement_text" name="announcement_text" required rows="3" placeholder="Enter your announcement here"></textarea>
+      </div>
+      <button type="submit">Submit Announcement</button>
+    </form>
+
+    <form action="/to_announcement" method="POST">
+      <button type="submit">View Announcement</button>
+    </form>
+</div>
+
+  <!-- Heading for the user's courses -->
+  <div class="heading">Courses Launched by You</div>
+
+  <!-- Grid to display the courses -->
+  <div class="course-grid-container">
+    <% courses.forEach(function(course) { %>
+      <div class="course-card">
+        <div class="course-code"><%= course.code %></div>
+        <div class="course-name"><%= course.name %></div>
+        <form action="/course_details" method="POST">
+          <input type="hidden" name="courseCode" value="<%= course.code %>">
+          <button type="submit">view details</button>
+        </form>
+      </div>
+    <% }) %>
+  </div>
+  <div class="course-grid-container">
+  <form action="/submitted_answer" method="POST">
+    <button type="submit">Submissions</button>
+  </form>
+</div>
+  
+
+<%- include("footer") %>

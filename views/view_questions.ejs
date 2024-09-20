@@ -1,0 +1,19 @@
+<%- include("header") %>
+
+<h1>All Questions</h1>
+
+<ul>
+  <% questions.forEach(function(question) { %>
+    <li>
+      <strong>Question Name:</strong> <%= question.question_name %><br>
+      <a href="/<%= question.file_path %>" download>Download File</a><br>
+    </li>
+  <% }) %>
+</ul>
+<form action="/view_answer" method="POST">
+  <button type="submit">Submit Answer</button>
+</form>
+
+
+
+<%- include("footer") %>
